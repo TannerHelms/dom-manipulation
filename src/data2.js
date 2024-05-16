@@ -43,4 +43,4 @@ const htmlData = [
 
 
 
-export default htmlData;
+export { htmlData };

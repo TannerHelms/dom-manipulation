@@ -1,17 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit"
+import { htmlData } from "../data2"
 
 export const renderSlice = createSlice({
     name: "render",
     initialState: {
-        value: null,
+        value: htmlData,
     },
     reducers: {
-        setRender: (state, action) => {
-            state.value = action.payload
+        setValue: (state, action) => {
+            const payload = action.payload
+            state.value = JSON.parse(payload.data)
         },
     },
 })
 
-export const { setRender } = renderSlice.actions
+export const { setValue } = renderSlice.actions
 
 export default renderSlice.reducer
