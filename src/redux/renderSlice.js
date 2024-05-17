@@ -4,7 +4,7 @@ import { htmlData } from "../data2"
 export const renderSlice = createSlice({
     name: "render",
     initialState: {
-        value: htmlData,
+        value: null,
     },
     reducers: {
         setValue: (state, action) => {

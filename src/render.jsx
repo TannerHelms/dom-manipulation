@@ -3,9 +3,10 @@ import { useSelector } from "react-redux";
 
 export default function Render() {
   const html = useSelector((state) => state.render.value);
-  console.log(html);
+
   const [render, setRender] = useState(null);
   function ToHtml(content) {
+    console.log(content);
     const el = document.createElement(content.type);
     if (content.style) el.className = content.style;
     if (content.src) el.src = content.src;
