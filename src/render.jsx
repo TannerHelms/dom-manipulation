@@ -39,10 +39,6 @@ export default function Render() {
     }
   }, [html]);
 
-  // useEffect(() => {
-  //   console.log(render);
-  // }, [render]);
-
   return (
     render && (
       <div

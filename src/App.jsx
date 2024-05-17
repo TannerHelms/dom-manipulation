@@ -3,6 +3,7 @@ import Render from "./render";
 import Tree from "./tree";
 import htmlToJson from "./html-json";
 import { setValue } from "./redux/renderSlice";
+import Html from "./html";
 
 export default function App() {
   const htmlData = useSelector((state) => state.render.value);
@@ -13,6 +14,8 @@ export default function App() {
     const json = htmlToJson(formData.target.elements[0].value);
     dispatch(setValue({ data: JSON.stringify(json) }));
   }
+
+  // return <Html />;
 
   if (!htmlData) {
     return (
@@ -28,7 +31,7 @@ export default function App() {
 
   return (
     <>
-      <div className="grid grid-cols-2 h-full">
+      <div className="grid grid-cols-2 h-full item-center justify-center w-screen">
         <div className="border-r-2 border-gray-400 ">
           <Tree />
         </div>

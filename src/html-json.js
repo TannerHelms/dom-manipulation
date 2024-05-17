@@ -9,7 +9,7 @@ export default function htmlToJson(htmlString) {
             id: idCounter++,
             type: node.nodeName.toLowerCase(),
             content: node.textContent.trim() || null,
-            style: node.getAttribute('class') || null,
+            style: node.getAttribute('className') || null,
         };
 
         if (node.nodeName.toLowerCase() === 'img') {

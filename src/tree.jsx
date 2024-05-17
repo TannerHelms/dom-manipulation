@@ -8,9 +8,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { setValue } from "./redux/renderSlice";
 import { htmlData } from "./data2";
 
-const data = JSON.parse(JSON.stringify(htmlData));
 enableRipple(true);
 function Tree() {
+  const data = JSON.parse(
+    JSON.stringify(useSelector((state) => state.render.value))
+  );
+  console.log("tree", data);
   const [modal, setModal] = React.useState(false);
   const dispatch = useDispatch();
   //   const htmlData = useSelector((state) => state.render.value);
@@ -50,9 +53,10 @@ function Tree() {
     const content = formData.target.elements.content.value;
     setModal(false);
     let targetNodeId = treeObj.selectedNodes[0];
+    console.log("targetNodeId", targetNodeId);
     let nodeId = "tree_" + index;
     let item = {
-      pid: 1,
+      pid: targetNodeId,
       id: 7,
       type,
       style,
